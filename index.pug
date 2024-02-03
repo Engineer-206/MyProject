@@ -1,0 +1,82 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Open Source Portal
+  link(rel='stylesheet' href='style.css')
+header
+  h1 Open Source Portal
+nav
+  ul
+    li
+      a(href='#' onclick='showHomePage()') Home
+    li
+      a(href='#' onclick='showAboutPage()') About
+    li
+      a(href='#' onclick='showLoginPage()') Login
+    li
+      a(href='#' onclick='showRegisterPage()') Register
+    li
+      a(href='#' onclick='showDownloadPage()') Download
+section#home-page.page
+  h2 Welcome to the Open Source Portal!
+  p
+    | This portal provides open-source software for various departments. Register to access and download software.
+section#about-page.page
+  h2 About
+  p
+    | This portal is dedicated to providing open-source software for students in different departments.
+// ... (previous HTML content) ...
+section#registration-page.page
+  h2 Student Registration
+  form#registrationForm
+    label(for='fname') first name:
+    input#fname(type='text' name='fname' required='')
+    label(for='lname') last name:
+    input#lname(type='text' name='lname' required='')
+    label(for='user_name') username:
+    input#username(type='text' name='username' required='')
+    label(for='email') Email:
+    input#email(type='email' name='email' required='')
+    label(for='phone') phone number:
+    input#phone(type='tel' name='phone' required='')
+    label(for='password') Password:
+    input#password(type='password' name='password' required='')
+    label(for='confirmPassword') Confirm Password:
+    input#confirmPassword(type='password' name='confirmPassword' required='')
+    label(for='department') Department:
+    select#department(name='department' required='')
+      option(value='computer_science') Computer Science
+      option(value='electrical_engineering') Electrical Engineering
+      option(value='civil_engineering') Civil Engineering
+      option(value='telecommunication_engineering') Telecommunication Engineering
+    button(type='button' onclick='registerUser()') Register
+section#login-page.page
+  h2 Login
+  form#loginForm
+    label(for='loginUsername') Username:
+    input#loginUsername(type='text' name='loginUsername' required='')
+    label(for='loginPassword') Password:
+    input#loginPassword(type='password' name='loginPassword' required='')
+    button(type='button' onclick='loginUser()') Login
+section#software-list.page
+  h2 Software List
+  #computer_science.department-software
+    h3 Computer Science Software
+    ul
+      li
+        | Software 1 - Version 1.0 
+        button(onclick="downloadSoftware('software1')") Download
+      li
+        | Software 2 - Version 2.5 
+        button(onclick="downloadSoftware('software2')") Download
+  #electrical_engineering.department-software
+    h3 Electrical Engineering Software
+    ul
+      li
+        | Software 3 - Version 3.0 
+        button(onclick="downloadSoftware('software3')") Download
+      li
+        | Software 4 - Version 4.2 
+        button(onclick="downloadSoftware('software4')") Download
+script(src='script.js')
